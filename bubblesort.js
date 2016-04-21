@@ -1,32 +1,30 @@
-'use strict';
+//'use strict';
 
 // bubbleSort takes an array and returns a sorted array.
 function bubbleSort(unSortedArray) {
   // if(!unSortedArray.length) return [];
-  this.count=0;
 
-  let sortedArray = unSortedArray.slice();
-
+  var sortedArray = unSortedArray.slice();
+  
   //iterating the array
-  for(let j = sortedArray.length-1; j>0; j--) {
+  for(var j = sortedArray.length-1; j>0; j--) {
     //iterating the index
-    for(let i = 0; i<j; i++) {
-      let a = sortedArray[i];
-      let b = sortedArray[i+1];
-      let compare = a > b;
+    for(var i = 0; i<j; i++) {
+      var a = sortedArray[i];
+      var b = sortedArray[i+1];
+      var compare = a > b;
       if(!!compare) {
-        this.getCount();
-        sortedArray[i] = b;
-        sortedArray[i+1] = a;
+        console.log(sortedArray);
+        sortedArray = swap.call(sortedArray,i,a,b);
+        console.log(sortedArray);
       } 
     }
   }
-
-  
-
   return sortedArray;
 }
 
-bubbleSort.prototype.getCount= function() {
-    this.count++;
+function swap(index, old, cur) {
+  this[index]=cur;
+  this[index+1]=old;
+  return this;
 }
